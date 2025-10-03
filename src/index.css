@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Macedog Design System - Studio Ghibli Inspired */
+    --background: 35 15% 96%;
+    --foreground: 25 40% 15%;
+
+    --card: 35 20% 98%;
+    --card-foreground: 25 40% 15%;
+
+    --popover: 35 20% 98%;
+    --popover-foreground: 25 40% 15%;
+
+    /* Primary: Warm Orange */
+    --primary: 22 85% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 35 90% 60%;
+
+    /* Secondary: Sandy beige */
+    --secondary: 35 25% 85%;
+    --secondary-foreground: 25 40% 15%;
+
+    /* Muted: Soft earth tones */
+    --muted: 35 20% 92%;
+    --muted-foreground: 25 20% 45%;
+
+    /* Accent: Golden */
+    --accent: 45 95% 55%;
+    --accent-foreground: 25 40% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 22 85% 50%;
+
+    --radius: 1rem;
+    
+    /* Custom Macedog tokens */
+    --hero-bg: 25 30% 8%;
+    --gradient-warm: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --shadow-warm: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 30% 8%;
+    --foreground: 35 15% 92%;
+
+    --card: 25 25% 12%;
+    --card-foreground: 35 15% 92%;
+
+    --popover: 25 25% 12%;
+    --popover-foreground: 35 15% 92%;
+
+    --primary: 22 85% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 35 90% 60%;
+
+    --secondary: 25 20% 20%;
+    --secondary-foreground: 35 15% 92%;
+
+    --muted: 25 20% 16%;
+    --muted-foreground: 35 10% 65%;
+
+    --accent: 45 95% 55%;
+    --accent-foreground: 25 30% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 35 15% 92%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 22 85% 50%;
+    
+    --hero-bg: 25 40% 5%;
+    --gradient-warm: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --shadow-warm: 0 10px 30px -10px hsl(var(--primary) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-quicksand;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+}
